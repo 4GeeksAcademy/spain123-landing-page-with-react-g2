@@ -1,17 +1,25 @@
 import React from "react";
 import Navbar from "./Navbar.jsx";
-import HeroRooster from "./Hero.jsx";
-import Footer from "./Footer.jsx";
+import Hero from "./Hero.jsx";
+import Card from "./Card.jsx";
+import { rosterData } from "../../data/rosterData.js";
 
-//create your first component
-const Home = () => {
+export default function Home() {
   return (
     <>
       <Navbar />
-      <HeroRooster />
-      <Footer />
+      <Hero />
+      <div className="container py-4 d-flex flex-wrap gap-4 justify-content-center">
+        {rosterData.map((item, i) => (
+          <Card
+            key={i}
+            image={item.image}
+            cardTitle={item.cardTitle}
+            cardDescription={item.cardDescription}
+            button={item.button}
+          />
+        ))}
+      </div>
     </>
   );
-};
-
-export default Home;
+}
