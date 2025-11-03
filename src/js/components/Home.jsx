@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar.jsx";
 import Hero from "./Hero.jsx";
 import Card from "./Card.jsx";
+import Footer from "./Footer.jsx";
 import { rosterData } from "../../data/rosterData.js";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
           />
         ))}
       </div>
+      <Footer />
     </>
   );
 }
